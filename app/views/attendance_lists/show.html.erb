@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @attendance_list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @attendance_list.description %>
+</p>
+
+<div id="attendance_items_wrapper">
+  <%= render @attendance_list.attendance_items %>
+  <div id="form">
+    <%= render "attendance_items/form" %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_attendance_list_path(@attendance_list) %> |
+<%= link_to 'Back', attendance_lists_path %>

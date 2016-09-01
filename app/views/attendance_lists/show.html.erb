@@ -1,21 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @attendance_list.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @attendance_list.description %>
-</p>
+<h2 class="attendance_list_title"><%= @attendance_list.title %></h2>
+<p class="attendance_list_sub_title"><%= @attendance_list.description %></p>
 
 <div id="attendance_items_wrapper">
-  <%= render @attendance_list.attendance_items %>
-  <div id="form">
-    <%= render "attendance_items/form" %>
-  </div>
+	<%= render @attendance_list.attendance_items %>
+	<div id="form">
+		<%= render "attendance_items/form" %>
+	</div>
 </div>
 
-<%= link_to 'Edit', edit_attendance_list_path(@attendance_list) %> |
-<%= link_to 'Back', attendance_lists_path %>
+<div class="links">
+	<%= link_to 'Edit', edit_attendance_list_path(@attendance_list) %> |
+	<%= link_to 'Delete', attendance_list_path(@attendance_list), method: :delete, data: { confirm: "Are you sure you want to delete?" }
+ %> |
+  <%= link_to 'Back', attendance_lists_path %>
+</div>
